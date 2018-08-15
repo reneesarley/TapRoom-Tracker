@@ -1,3 +1,13 @@
-<p>
-  patron works! {{ kegs[0].beerName }}
-</p>
+<div class="container">
+  <div class="row">
+    <div  class="col-4" *ngFor="let keg of kegs">
+      <h4>{{ keg.brand }} {{ keg.beerName }}</h4>
+      <ul>
+        <li>${{keg.price}}</li>
+        <li>ABV: {{keg.alcoholContent}}%</li>
+        <li>Keg Status: {{keg.pints}} pints remaining</li>
+      </ul>
+
+    </div>
+  </div>
+</div>

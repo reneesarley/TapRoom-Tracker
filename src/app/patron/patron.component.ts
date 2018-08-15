@@ -13,11 +13,8 @@ export class PatronComponent implements OnInit {
 
   constructor(private _keg: KegService) { }
 
-  keg1= new Keg("IPA", "Breakside", 6, 6.2);
-
   ngOnInit() {
     this._keg.keg.subscribe(res => this.kegs = res);
-    this.kegs.push(this.keg1);
   }
 
 
