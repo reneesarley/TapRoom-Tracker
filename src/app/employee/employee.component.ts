@@ -39,6 +39,11 @@ export class EmployeeComponent implements OnInit {
     keg.pints --;
   }
 
+  deleteKeg(keg){
+    let kegIndex = this.kegs.indexOf(keg);
+    this.kegs.splice(kegIndex, 1);
+  }
+
   finishedEditingOri(){
     this.selectedKeg = null;
   }
@@ -47,6 +52,17 @@ export class EmployeeComponent implements OnInit {
     this.kegs.push(this.selectedKeg);
     this.selectedKeg = null;
   }
+
+  kegStatus(currentKeg) {
+  if (currentKeg.pints > 100) {
+    return "full";
+  } else if (currentKeg.pints >= 62){
+    return "half"
+  } else {
+    return "low"
+  }
+
+}
 
 
 }

@@ -1,0 +1,11 @@
+li.low {
+  background-color: pink;
+}
+
+li.half {
+  background-color: lightyellow;
+}
+
+li.full {
+  background-color: lightgreen;
+}
