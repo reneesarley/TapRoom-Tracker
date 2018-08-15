@@ -32,4 +32,9 @@ export class EmployeeComponent implements OnInit {
     keg.pints --;
   }
 
+  finishedEditing(){
+    this.selectedKeg = null;
+  }
+
+
 }
