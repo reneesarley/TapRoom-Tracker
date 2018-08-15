@@ -2,6 +2,43 @@ import { Component, Inject } from '@angular/core';
 import { KegService } from './keg.service';
 import { Keg } from  './models/keg.model';
 
+import {
+  MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatTreeModule,
+} from '@angular/material';
 
 
 @Component({
@@ -13,8 +50,6 @@ import { Keg } from  './models/keg.model';
 export class AppComponent {
 
   kegs: any = [];
-  selectedKeg = null;
-
 
 
   constructor(private _keg: KegService) { }
@@ -48,12 +83,4 @@ export class AppComponent {
     this.kegs.push(this.keg9);
   }
 
-  editKeg(clickedKeg){
-    this.selectedKeg = clickedKeg;
-  }
-
-  finishedEditing(){
-    this.selectedKeg = null;
-  }
-
-  }
+}

@@ -58,10 +58,7 @@ export class EmployeeComponent implements OnInit {
         return 0;
       });
     }
-
   }
-
-
 
   deleteKeg(keg){
     let kegIndex = this.kegs.indexOf(keg);

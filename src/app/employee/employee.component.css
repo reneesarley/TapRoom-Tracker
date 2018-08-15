@@ -1,11 +1,11 @@
 li.low {
-  background-color: pink;
+  color: #e43f5c;
 }
 
 li.half {
-  background-color: lightyellow;
+  color: #b1b13c;
 }
 
 li.full {
-  background-color: lightgreen;
+  color: #50ad6a;
 }

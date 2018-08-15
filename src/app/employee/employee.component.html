@@ -7,6 +7,7 @@
         <li>ABV: {{keg.alcoholContent}}%</li>
         <li [class]="kegStatus(keg)">Keg Status: {{keg.pints}} pints remaining</li>
       </ul>
+      <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
       <button (click)="sellABeer(keg)">Sell</button>
       <button (click)="editButtonClicked(keg)">Edit</button>
       <button (click)="deleteKeg(keg)">Remove</button>
