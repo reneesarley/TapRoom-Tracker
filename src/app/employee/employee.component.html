@@ -13,5 +13,19 @@
     </div>
   </div>
   <button (click)="editButtonClicked(newKeg)">Add New Keg</button>
+  <!-- <form ng-submit="onSubmit(comment)"> -->
+  <form #myform="ngForm" (ngSubmit)="onSubmit(myform)" novalidate>
+    <label>Sort By:</label>
+    <select name="sortBy" ngModel>
+      <option value="brand">Brewery</option>
+      <option value="beerName">Beer</option>
+      <option value="price">Price</option>
+      <option value="alcoholContent">Alcohol Content</option>
+    </select>
+    <br>
+    <input type="radio"  name="order" ngModel value="ascending">Ascending<br>
+    <input type="radio"  name="order" ngModel value="descending">Descending<br>
+    <button type="submit">sort</button>
+  </form>
   <app-update-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditingOri()" (clickedAdd)="finishedAddingOri()"></app-update-keg>
 </div>

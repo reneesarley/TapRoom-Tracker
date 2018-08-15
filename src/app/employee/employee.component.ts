@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
 import { KegService } from '../keg.service';
 import { Keg } from  '../models/keg.model';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-employee',
@@ -12,7 +13,7 @@ export class EmployeeComponent implements OnInit {
 
   @Output() clickSender = new EventEmitter();
 
-  kegs: any = [];
+  kegs = [];
 
   selectedKeg = null
 
@@ -38,6 +39,29 @@ export class EmployeeComponent implements OnInit {
   sellABeer(keg){
     keg.pints --;
   }
+
+  onSubmit(f: NgForm) {
+    let target: string = f.value.sortBy;
+    if ( 1 == 1 ) {
+      this.kegs.sort(function(a, b) {
+        if (f.value.order == 'descending') {
+          let temp = a;
+          a = b;
+          b = temp;
+        }
+        if (a[target] > b[target]) {
+          return 1;
+        }
+        if (a[target] < b[target]) {
+          return -1;
+        }
+        return 0;
+      });
+    }
+
+  }
+
+
 
   deleteKeg(keg){
     let kegIndex = this.kegs.indexOf(keg);
