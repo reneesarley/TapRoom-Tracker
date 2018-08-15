@@ -1,7 +1,8 @@
-import { Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, Inject} from '@angular/core';
 import { KegService } from '../keg.service';
 import { Keg } from  '../models/keg.model';
 import {NgForm} from '@angular/forms';
+import {SESSION_STORAGE, WebStorageService} from 'angular-webstorage-service';
 
 @Component({
   selector: 'app-employee',
@@ -17,7 +18,7 @@ export class EmployeeComponent implements OnInit {
 
   selectedKeg = null
 
-  constructor(private _keg: KegService) { }
+  constructor(private _keg: KegService, @Inject(SESSION_STORAGE) private storage: WebStorageService) { }
 
   ngOnInit() {
     this._keg.keg.subscribe(res => this.kegs = res);
@@ -38,6 +39,18 @@ export class EmployeeComponent implements OnInit {
 
   sellABeer(keg){
     keg.pints --;
+    this.saveInStorage();
+    this.getFromStorage(); // dont look at this
+  }
+
+  saveInStorage(): void {
+    console.log("shoving");
+    this.storage.set("tap-rndn-key", JSON.stringify(this.kegs));
+  }
+
+  getFromStorage(): void {
+    console.log("tugging");
+    this.kegs = JSON.parse(this.storage.get("tap-rndn-key"));
   }
 
   onSubmit(f: NgForm) {
