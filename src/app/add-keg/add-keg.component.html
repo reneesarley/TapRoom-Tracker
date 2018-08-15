@@ -1,4 +1,4 @@
-<h1>testing</h1>
+
 <div *ngIf="childSelectedKeg">
   <h3>{{childSelectedKeg.beerName}}</h3>
   <label for="">Beer Name</label>
@@ -17,5 +17,5 @@
     <input [(ngModel)]="object.direction">
   </div> -->
   <br>
-  <button *ngIf= "childSelectedKeg.registered" (click)="finishedEditing()">Done</button>
-  <button *ngIf= "!childSelectedKeg.registered" (click)="finishedAdding()">Done Adding</button>
+  <button (click)="finishedEditing()">Done</button>
+</div>

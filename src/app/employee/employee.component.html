@@ -11,5 +11,6 @@
       <button (click)="editButtonClicked(keg)">Edit</button>
     </div>
   </div>
-  <app-update-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditing()" ></app-update-keg>
+  <button (click)="editButtonClicked(newKeg)">Add New Keg</button>
+  <app-update-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditingOri()" (clickedAdd)="finishedAddingOri()"></app-update-keg>
 </div>

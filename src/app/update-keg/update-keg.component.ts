@@ -11,9 +11,14 @@ export class UpdateKegComponent  {
 
   @Input() childSelectedKeg: Keg;
   @Output() clickedDone = new EventEmitter();
+  @Output() clickedAdd = new EventEmitter();
 
   finishedEditing(){
     this.clickedDone.emit();
+  }
+
+  finishedAdding(){
+    this.clickedAdd.emit();
   }
 
 }

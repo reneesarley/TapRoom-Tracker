@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PatronComponent } from './patron/patron.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { UpdateKegComponent } from './update-keg/update-keg.component';
+import { AddKegComponent } from './add-keg/add-keg.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { UpdateKegComponent } from './update-keg/update-keg.component';
     NavbarComponent,
     PatronComponent,
     EmployeeComponent,
-    UpdateKegComponent
+    UpdateKegComponent,
+    AddKegComponent
   ],
   imports: [
     BrowserModule,

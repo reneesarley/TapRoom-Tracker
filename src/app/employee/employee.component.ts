@@ -20,19 +20,31 @@ export class EmployeeComponent implements OnInit {
 
   ngOnInit() {
     this._keg.keg.subscribe(res => this.kegs = res);
+
   }
 
   editButtonClicked(kegToUpdate: Keg) {
-  this.selectedKeg = kegToUpdate;
-  this.clickSender.emit(this.selectedKeg);
-  console.log(this.selectedKeg);
+    if (kegToUpdate != undefined) {
+      this.selectedKeg = kegToUpdate;
+      this.clickSender.emit(this.selectedKeg);
+    }
+    else {
+      this.selectedKeg = new Keg('', '', 0, 0, false);
+
+    }
+    console.log(this.selectedKeg);
   }
 
   sellABeer(keg){
     keg.pints --;
   }
 
-  finishedEditing(){
+  finishedEditingOri(){
+    this.selectedKeg = null;
+  }
+
+  finishedAddingOri(){
+    this.kegs.push(this.selectedKeg);
     this.selectedKeg = null;
   }
 
