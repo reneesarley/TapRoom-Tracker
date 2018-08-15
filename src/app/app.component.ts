@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { KegService } from './keg.service';
 import { Keg } from  './models/keg.model';
+
+
 
 @Component({
   selector: 'app-root',
@@ -13,7 +15,11 @@ export class AppComponent {
   kegs: any = [];
   selectedKeg = null;
 
+
+
   constructor(private _keg: KegService) { }
+
+
 
   keg1= new Keg("IPA", "Breakside", 6, 6.2);
   keg2= new Keg("Pale Ale", "Burnside", 7, 5.2);

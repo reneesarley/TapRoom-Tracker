@@ -7,7 +7,7 @@
         <li>ABV: {{keg.alcoholContent}}%</li>
         <li>Keg Status: {{keg.pints}} pints remaining</li>
       </ul>
-      <button type="button" name="sell">Sell</button>
+      <button (click)="sellABeer(keg)">Sell</button>
       <button (click)="editButtonClicked(keg)">Edit</button>
     </div>
   </div>

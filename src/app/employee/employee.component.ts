@@ -26,6 +26,10 @@ export class EmployeeComponent implements OnInit {
   this.selectedKeg = kegToUpdate;
   this.clickSender.emit(this.selectedKeg);
   console.log(this.selectedKeg);
-}
+  }
+
+  sellABeer(keg){
+    keg.pints --;
+  }
 
 }

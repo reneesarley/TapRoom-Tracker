@@ -1,8 +1,16 @@
 <h1>testing</h1>
 <div *ngIf="childSelectedKeg">
   <h3>{{childSelectedKeg.beerName}}</h3>
-  <label for="">Edit Keg Details</label>
+  <label for="">Beer Name</label>
   <input [(ngModel)]="childSelectedKeg.beerName">
+  <label for="">Brewery</label>
+  <input [(ngModel)]="childSelectedKeg.brand">
+  <label >Alcohol %</label>
+  <input [(ngModel)]="childSelectedKeg.alcoholContent">
+  <label >Number of pints left:</label>
+  <input [(ngModel)]="childSelectedKeg.pints">
+  <label >Price per pint</label>
+  <input [(ngModel)]="childSelectedKeg.price">
   <br>
   <!-- <label>Edit recipe directions:</label>
   <div *ngFor="let object of childSelectedKeg.directions">

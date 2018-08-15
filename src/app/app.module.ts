@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule }  from '@angular/forms';
+import { StorageServiceModule } from 'angular-webstorage-service';
 
 import { KegService } from './keg.service';
 
@@ -23,7 +24,8 @@ import { UpdateKegComponent } from './update-keg/update-keg.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    StorageServiceModule
   ],
   providers: [KegService],
   bootstrap: [AppComponent]
