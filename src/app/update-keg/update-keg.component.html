@@ -1,0 +1,13 @@
+<h1>testing</h1>
+<div *ngIf="childSelectedKeg">
+  <h3>{{childSelectedKeg.beerName}}</h3>
+  <label for="">Edit Keg Details</label>
+  <input [(ngModel)]="childSelectedKeg.beerName">
+  <br>
+  <!-- <label>Edit recipe directions:</label>
+  <div *ngFor="let object of childSelectedKeg.directions">
+    <input [(ngModel)]="object.direction">
+  </div> -->
+  <br>
+  <button (click)="finishedEditing()">Done</button>
+</div>

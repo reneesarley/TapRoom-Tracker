@@ -11,7 +11,7 @@ import { Keg } from  './models/keg.model';
 export class AppComponent {
 
   kegs: any = [];
-  isActive: boolean = false;
+  selectedKeg = null;
 
   constructor(private _keg: KegService) { }
 
@@ -42,9 +42,12 @@ export class AppComponent {
     this.kegs.push(this.keg9);
   }
 
+  editKeg(clickedKeg){
+    this.selectedKeg = clickedKeg;
+  }
 
-  // activeButton = function() {
-  //   this.isActive = !this.isActive;
-  // }
+  finishedEditing(){
+    this.selectedKeg = null;
+  }
 
   }
